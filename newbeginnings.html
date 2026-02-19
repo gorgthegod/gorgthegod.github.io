@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEORGE.COM</title>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --cyan: #81D8E7;
+            --pink: #F292B1;
+            --yellow: #FDE910;
+            --orange: #FF7A18;
+            --off-white: #FAF7F2;
+            --black: #1A1A1A;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'VT323', monospace;
+            background-color: var(--off-white);
+            color: var(--black);
+            overflow-x: hidden;
+        }
+
+        /* Header / Navigation */
+        header {
+            background-color: var(--cyan);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid rgba(0,0,0,0.05);
+            box-shadow: 0 10px 20px rgba(129, 216, 231, 0.3);
+        }
+
+        .logo {
+            font-size: 3rem;
+            color: var(--pink);
+            letter-spacing: 8px;
+            text-shadow: 2px 2px 0px var(--black);
+            text-transform: uppercase;
+        }
+
+        .nav-btn {
+            background-color: var(--yellow);
+            border: 2px solid var(--black);
+            padding: 5px 20px;
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: transform 0.1s;
+        }
+
+        .nav-btn:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 4px 4px 0px var(--black);
+        }
+
+        .nav-btn:active {
+            transform: translate(0, 0);
+            box-shadow: none;
+        }
+
+        /* Content Areas */
+        main {
+            padding: 60px 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        section {
+            display: none; /* Hidden by default */
+            animation: fadeIn 0.4s ease-out;
+        }
+
+        section.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Home Page Styles */
+        .home-grid {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .image-stack {
+            position: relative;
+            width: 300px;
+            height: 350px;
+            background-color: var(--cyan);
+            border: 2px solid var(--black);
+        }
+
+        .image-stack::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 100%;
+            height: 100%;
+            background-color: var(--orange);
+            z-index: -1;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            line-height: 0.9;
+            text-transform: uppercase;
+        }
+
+        /* Directory Page Styles */
+        .directory-title {
+            text-align: center;
+            font-size: 3rem;
+            margin-bottom: 50px;
+            letter-spacing: 5px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            aspect-ratio: 1 / 1;
+            background-color: var(--orange);
+            border: 1px solid rgba(0,0,0,0.1);
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: var(--black);
+            transition: background 0.3s;
+        }
+
+        .card:hover {
+            background-color: var(--pink);
+        }
+
+        .card-icon {
+            font-size: 4rem;
+            margin-bottom: 10px;
+        }
+
+        /* Contact Page Styles */
+        .contact-box {
+            background-color: var(--pink);
+            padding: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 2px solid var(--black);
+        }
+
+        .email-text {
+            font-size: 1.8rem;
+            word-break: break-all;
+        }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <button class="nav-btn" onclick="showSection('home')">Home</button>
+    <div class="logo">GEORGE.COM</div>
+    <div>
+        <button class="nav-btn" onclick="showSection('directory')">Directory</button>
+        <button class="nav-btn" onclick="showSection('contact')">Contact</button>
+    </div>
+</header>
+
+<main>
+    <section id="home" class="active">
+        <div class="home-grid">
+            <div class="image-stack"></div>
+            <div class="hero-text">
+                <h1>Who is <br> George Williams</h1>
+            </div>
+        </div>
+    </section>
+
+    <section id="directory">
+        <h2 class="directory-title">DIRECTORY</h2>
+        <div class="grid-container">
+            <a href="#" class="card">
+                <div class="card-icon">🗂️</div>
+                <h3>PROJECTS</h3>
+            </a>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="directory-title">CONTACT</h2>
+        <div class="contact-box">
+            <div style="font-size: 3rem;">✉️</div>
+            <div class="email-text">GWILLIAMS090608@GMAIL.COM</div>
+        </div>
+    </section>
+</main>
+
+<script>
+    function showSection(sectionId) {
+        // Hide all sections
+        const sections = document.querySelectorAll('section');
+        sections.forEach(s => s.classList.remove('active'));
+        
+        // Show target section
+        document.getElementById(sectionId).classList.add('active');
+    }
+</script>
+
+</body>
+</html>
