@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>George Williams | Personal Site</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --sky-blue: #92DFF3;
+            --pink: #F092B0;
+            --yellow: #FDEB26;
+            --off-white: #F9F6F0;
+            --orange: #FF6B35;
+            --black: #000000;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--off-white);
+            font-family: 'Press Start 2P', cursive;
+            color: var(--black);
+            line-height: 1.6;
+        }
+
+        /* HEADER SECTION */
+        header {
+            background-color: var(--sky-blue);
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 4px solid rgba(0,0,0,0.1); /* Subtle shadow effect from your screen */
+        }
+
+        .logo {
+            color: var(--pink);
+            font-size: 24px;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            -webkit-text-stroke: 1px var(--black); /* Optional for that sharp outline */
+        }
+
+        .nav-btn {
+            background-color: var(--yellow);
+            border: 1px solid var(--black);
+            padding: 10px 15px;
+            font-family: 'Press Start 2P', cursive;
+            font-size: 10px;
+            cursor: pointer;
+            box-shadow: 2px 2px 0px var(--black);
+            text-decoration: none;
+            color: black;
+        }
+
+        .nav-btn:active {
+            box-shadow: 0px 0px 0px var(--black);
+            transform: translate(2px, 2px);
+        }
+
+        /* HERO / ABOUT SECTION */
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .image-stack {
+            position: relative;
+            width: 300px;
+            height: 300px;
+        }
+
+        .back-square {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 280px;
+            height: 280px;
+            background-color: var(--orange);
+        }
+
+        .front-square {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 280px;
+            background-color: var(--sky-blue);
+            border: none;
+        }
+
+        .hero-text {
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        /* DIRECTORY GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .card {
+            background-color: var(--orange);
+            aspect-ratio: 1 / 1;
+            border-radius: 12px;
+            border: 1px solid rgba(0,0,0,0.2);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* CONTACT BAR */
+        .contact-bar {
+            background-color: var(--pink);
+            margin: 40px auto;
+            padding: 20px;
+            width: fit-content;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            font-size: 12px;
+        }
+
+        .icon-mail {
+            width: 30px;
+            height: 20px;
+            border: 2px solid black;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <a href="#" class="nav-btn">DIRECTORY</a>
+        <div class="logo">GEORGE.COM</div>
+        <a href="#" class="nav-btn">CONTACT</a>
+    </header>
+
+    <div class="container">
+        <div class="image-stack">
+            <div class="back-square"></div>
+            <div class="front-square">
+<img src="Kart1.jpg">
+</div>
+        </div>
+        <div class="hero-text">
+            Who is<br>George Williams
+        </div>
+    </div>
+
+    <div class="container" style="flex-direction: column;">
+        <h2 style="text-align: center;">DIRECTORY</h2>
+        <div class="grid">
+            <div class="card">PROJECTS</div>
+            <div class="card"></div>
+            <div class="card"></div>
+        </div>
+    </div>
+
+    <div class="container" style="flex-direction: column;">
+        <h2 style="text-align: center;">CONTACT</h2>
+        <div class="contact-bar">
+            <div class="icon-mail"></div>
+            GWILLIAMS090608@GMAIL.COM
+        </div>
+    </div>
+
+</body>
+</html>
